@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateSvdetailsTable extends Migration
 {
@@ -16,7 +16,7 @@ class CreateSvdetailsTable extends Migration
         Schema::create('svdetails', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('service_id')->nullable()->unsigned();
-              $table->string('section_title')->nullable();
+            $table->string('section_title')->nullable();
             $table->string('section_title2')->nullable();
             $table->string('section_color')->nullable();
             $table->string('section_image')->nullable();

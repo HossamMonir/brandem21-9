@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use DB;
+use Illuminate\Http\Request;
+
 class TestimonialsController extends Controller
 {
     /**
@@ -14,7 +15,8 @@ class TestimonialsController extends Controller
     public function index()
     {
         $testimonials = DB::table('testimonials')->get();
-       return view('admin.testimonials.index', compact('testimonials'));
+
+        return view('admin.testimonials.index', compact('testimonials'));
     }
 
     /**
@@ -24,8 +26,7 @@ class TestimonialsController extends Controller
      */
     public function create()
     {
-      return view('admin.testimonials.create');
-
+        return view('admin.testimonials.create');
     }
 
     /**
@@ -36,19 +37,19 @@ class TestimonialsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'name' => 'required',
             'title' => 'required',
             'description' => 'required',
         ]);
 
         DB::table('testimonials')->insert([
-            'name' =>$request->name,
-            'title' =>$request->title,
-            'description' =>$request->description,
+            'name' => $request->name,
+            'title' => $request->title,
+            'description' => $request->description,
         ]);
-         return redirect()->route('testimonials-index')->with('message', 'Testimonial  has been added!');
 
+        return redirect()->route('testimonials-index')->with('message', 'Testimonial  has been added!');
     }
 
     /**
@@ -70,10 +71,10 @@ class TestimonialsController extends Controller
      */
     public function edit($id)
     {
-         $testimonial = DB::table('testimonials')->where('id', $id)->get();
-              $testimonial = $testimonial[0];
-        return view('admin.testimonials.edit',compact('testimonial'));
+        $testimonial = DB::table('testimonials')->where('id', $id)->get();
+        $testimonial = $testimonial[0];
 
+        return view('admin.testimonials.edit', compact('testimonial'));
     }
 
     /**
@@ -85,12 +86,13 @@ class TestimonialsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        DB::table('testimonials') ->where('id', $id)->update([
-            'name' =>$request->name,
-            'title' =>$request->title,
-            'description' =>$request->description,
+        DB::table('testimonials')->where('id', $id)->update([
+            'name' => $request->name,
+            'title' => $request->title,
+            'description' => $request->description,
         ]);
-         return redirect()->route('testimonials-index')->with('message', 'Testimonial  has been updated!');
+
+        return redirect()->route('testimonials-index')->with('message', 'Testimonial  has been updated!');
     }
 
     /**
@@ -104,7 +106,7 @@ class TestimonialsController extends Controller
         DB::table('testimonials')
             ->where('id', $id)
             ->delete();
-        return response()->json(['message' => 'Testimonial deleted successfully']);
 
+        return response()->json(['message' => 'Testimonial deleted successfully']);
     }
 }

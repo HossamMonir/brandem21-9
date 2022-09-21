@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateTestimonialsTable extends Migration
 {
@@ -18,7 +18,7 @@ class CreateTestimonialsTable extends Migration
             $table->string('name');
             $table->string('title');
             $table->string('description');
-             $table->boolean('featured')->nullable();
+            $table->boolean('featured')->nullable();
             $table->integer('display_order')->nullable();
             $table->timestamps();
         });

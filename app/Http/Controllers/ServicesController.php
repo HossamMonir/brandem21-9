@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Auth;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ServicesController extends Controller
 {
@@ -20,6 +19,7 @@ class ServicesController extends Controller
         $services = DB::table('services')
             ->orderBy('display_order')
             ->get();
+
         return view('admin.services.index', compact('services'));
     }
 
@@ -41,7 +41,7 @@ class ServicesController extends Controller
         ]);
 
         $photo = $request->file('image');
-        $newPhoto = time() . $photo->getClientOriginalName();
+        $newPhoto = time().$photo->getClientOriginalName();
         $photo->move('images/', $newPhoto);
 
         $services = DB::table('services')->insert([
@@ -73,7 +73,8 @@ class ServicesController extends Controller
             ->where('id', $id)
             ->get();
         $service = $service[0];
-        return view('admin.service-details.index', compact('service','id'));
+
+        return view('admin.service-details.index', compact('service', 'id'));
     }
 
     public function edit($id)
@@ -82,6 +83,7 @@ class ServicesController extends Controller
             ->where('id', $id)
             ->get();
         $service = $service[0];
+
         return view('admin.services.edit', compact('service'));
     }
 
@@ -98,7 +100,7 @@ class ServicesController extends Controller
 
         if ($request->has('image')) {
             $photo = $request->file('image');
-            $newPhoto = time() . $photo->getClientOriginalName();
+            $newPhoto = time().$photo->getClientOriginalName();
             $photo->move('images/', $newPhoto);
             DB::table('services')
                 ->where('id', $id)
@@ -106,20 +108,20 @@ class ServicesController extends Controller
                     'image' => $newPhoto,
                 ]);
         }
-            $service = DB::table('services')
-                ->where('id', $id)
-                ->update([
-                    'title' => $request->title,
-                    // 'image' => $newPhoto,
-                    'text' => $request->text,
-                    'offer' => $request->offer,
-                    'turnto' => $request->turnto,
-                    'featured' => $request->featured,
-                    'display_order' => $request->display_order,
-                    'updated_by' => Auth::id(),
-                    'updated_at' => Carbon::now(),
-                ]);
-       
+        $service = DB::table('services')
+            ->where('id', $id)
+            ->update([
+                'title' => $request->title,
+                // 'image' => $newPhoto,
+                'text' => $request->text,
+                'offer' => $request->offer,
+                'turnto' => $request->turnto,
+                'featured' => $request->featured,
+                'display_order' => $request->display_order,
+                'updated_by' => Auth::id(),
+                'updated_at' => Carbon::now(),
+            ]);
+
         // return \Redirect::back()->with('message','Service has been updated!');
         return redirect()
             ->route('services-index')
@@ -131,6 +133,7 @@ class ServicesController extends Controller
         $services = DB::table('services')
             ->where('id', $id)
             ->delete();
+
         return response()->json(['message' => 'Service deleted successfully']);
     }
 }

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use DB;
+use Illuminate\Http\Request;
+
 class ClientController extends Controller
 {
     /**
@@ -14,6 +15,7 @@ class ClientController extends Controller
     public function index()
     {
         $clients = DB::table('clients')->get();
+
         return view('admin.client.index', compact('clients'));
     }
 
@@ -25,7 +27,6 @@ class ClientController extends Controller
     public function create()
     {
         return view('admin.client.create');
-        
     }
 
     /**
@@ -36,28 +37,27 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-      $this->validate($request,[
-        'client_name'=>'required',
-        'image'=>'required',
-        'email'=>'required|email',
-        'phone'=>'required',
-      ]);
-      $photo = $request->file('image');
-        $newPhoto = time() . $photo->getClientOriginalName();
+        $this->validate($request, [
+            'client_name' => 'required',
+            'image' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+        ]);
+        $photo = $request->file('image');
+        $newPhoto = time().$photo->getClientOriginalName();
         $photo->move('images/client/', $newPhoto);
-         
-  
-        $client = DB::table('clients')->insert([
-        'name'=>$request->client_name,
-        'logo'=>$newPhoto,
-        'email'=>$request->email,
-        'phone'=>$request->phone,
-        'projects'=>$request->projects,
-    ]);
-    return redirect()
-            ->route('client-index')
-            ->with('message', 'Client has been added!');
 
+        $client = DB::table('clients')->insert([
+            'name' => $request->client_name,
+            'logo' => $newPhoto,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'projects' => $request->projects,
+        ]);
+
+        return redirect()
+                ->route('client-index')
+                ->with('message', 'Client has been added!');
     }
 
     /**
@@ -79,9 +79,10 @@ class ClientController extends Controller
      */
     public function edit($id)
     {
-        $client= DB::table('clients')->where('id', $id)
+        $client = DB::table('clients')->where('id', $id)
             ->get();
-               $client = $client[0];
+        $client = $client[0];
+
         return view('admin.client.edit', compact('client'));
     }
 
@@ -99,30 +100,29 @@ class ClientController extends Controller
         //     'email'=>'required',
         //     'phone'=>'required',
         // ]);
-        if($request->has('logo')){
-             $photo = $request->file('image');
-            $newPhoto = time() . $photo->getClientOriginalName();
+        if ($request->has('logo')) {
+            $photo = $request->file('image');
+            $newPhoto = time().$photo->getClientOriginalName();
             $photo->move('images/client/', $newPhoto);
             DB::table('clients')
              ->where('id', $id)
             ->update([
-                'logo' => $photo
+                'logo' => $photo,
             ]);
         }
-          $client = DB::table('clients')
-                ->where('id', $id)
-                ->update([
-                    'name' =>$request->client_name,
-                    'email' =>$request->email,
-                    'phone' =>$request->phone,
-                    'projects'=>$request->projects,
+        $client = DB::table('clients')
+              ->where('id', $id)
+              ->update([
+                  'name' => $request->client_name,
+                  'email' => $request->email,
+                  'phone' => $request->phone,
+                  'projects' => $request->projects,
 
+              ]);
 
-                ]);
-                 return redirect()
+        return redirect()
             ->route('client-index')
             ->with('message', 'Client has been updated!');
-        
     }
 
     /**
@@ -132,11 +132,11 @@ class ClientController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    { 
+    {
         $client = DB::table('clients')
             ->where('id', $id)
             ->delete();
-        return response()->json(['message' => 'client deleted successfully']);
 
+        return response()->json(['message' => 'client deleted successfully']);
     }
 }

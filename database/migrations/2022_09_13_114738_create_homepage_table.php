@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateHomepageTable extends Migration
 {
@@ -22,7 +22,7 @@ class CreateHomepageTable extends Migration
             $table->string('section_subtitle')->nullable();
             $table->text('section_text')->nullable();
             $table->boolean('featured')->nullable();
-            
+
             $table->integer('display_order')->nullable();
             $table->integer('created_by');
             $table->integer('updated_by');

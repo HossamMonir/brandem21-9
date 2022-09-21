@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Auth;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminPagesController extends Controller
 {
@@ -18,6 +17,7 @@ class AdminPagesController extends Controller
     public function index()
     {
         $pages = DB::table('pages')->get();
+
         return view('admin.pages.index', compact('pages'));
     }
 
@@ -27,6 +27,7 @@ class AdminPagesController extends Controller
             ->where('id', $id)
             ->get();
         $page = $page[0];
+
         return view('admin.pages.edit', compact('page'));
     }
 
@@ -36,6 +37,7 @@ class AdminPagesController extends Controller
             ->where('id', $id)
             ->get();
         $page = $page[0];
+
         return view('admin.pages.edit', compact('page'));
     }
 
@@ -48,19 +50,19 @@ class AdminPagesController extends Controller
 
         if ($request->has('banner_image')) {
             $bannerImage = $request->file('banner_image');
-            $newbannerImage = time() . $bannerImage->getClientOriginalName();
+            $newbannerImage = time().$bannerImage->getClientOriginalName();
             $bannerImage->move('images/', $newbannerImage);
-        } else 
+        } else {
             $newbannerImage = $request->banner_image;
-        
+        }
 
         if ($request->has('og_image')) {
             $ogImage = $request->file('og_image');
-            $newogImage = time() . $ogImage->getClientOriginalName();
+            $newogImage = time().$ogImage->getClientOriginalName();
             $ogImage->move('images/seo/', $newogImage);
-        } else 
+        } else {
             $newogImage = $request->og_image;
-    
+        }
 
         $page = DB::table('pages')
             ->where('id', $id)

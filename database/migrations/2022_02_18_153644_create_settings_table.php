@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateSettingsTable extends Migration
 {
@@ -41,9 +41,7 @@ class CreateSettingsTable extends Migration
             $table->text('google_analytics_code')->nullable();
             $table->text('facebook_pixel_code')->nullable();
 
-        
             $table->longText('description')->nullable();
-        
 
             $table->integer('updated_by');
             $table->timestamps();

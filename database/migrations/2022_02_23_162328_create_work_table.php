@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateWorkTable extends Migration
 {
@@ -15,7 +15,7 @@ class CreateWorkTable extends Migration
     {
         Schema::create('work', function (Blueprint $table) {
             $table->increments('id');
-             $table->integer('client_id')->nullable()->unsigned()->onDelete('cascade');  
+            $table->integer('client_id')->nullable()->unsigned()->onDelete('cascade');
             $table->string('title');
             $table->string('image')->nullable();
             $table->string('image2')->nullable();

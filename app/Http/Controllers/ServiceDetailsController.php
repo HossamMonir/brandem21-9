@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use DB;
 use Auth;
 use Carbon\Carbon;
+use DB;
+use Illuminate\Http\Request;
 
 class ServiceDetailsController extends Controller
 {
-       public function __construct()
+    public function __construct()
     {
         $this->middleware('auth');
     }
@@ -19,14 +19,14 @@ class ServiceDetailsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index($service_id)
     {
         $servdetails = DB::table('svdetails')->where('service_id', '=', $service_id)
             ->get();
-            // return $servdetails;
-         $services= DB::table('services')->where('id' , '=', $service_id)->get();
-        return view('admin.service-details.index', compact('services', 'service_id','servdetails'));
+        // return $servdetails;
+        $services = DB::table('services')->where('id', '=', $service_id)->get();
+
+        return view('admin.service-details.index', compact('services', 'service_id', 'servdetails'));
     }
 
     /**
@@ -36,7 +36,7 @@ class ServiceDetailsController extends Controller
      */
     public function create($service_id)
     {
-         return view('admin.service-details.create', compact('service_id')); 
+        return view('admin.service-details.create', compact('service_id'));
     }
 
     /**
@@ -45,10 +45,10 @@ class ServiceDetailsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($service_id,Request $request)
+    public function store($service_id, Request $request)
     {
-       $photo = $request->file('section_image');
-        $newPhoto = time() . $photo->getClientOriginalName();
+        $photo = $request->file('section_image');
+        $newPhoto = time().$photo->getClientOriginalName();
         $photo->move('images/services/', $newPhoto);
         // $newPhoto= $request->section_image;
 
@@ -60,7 +60,7 @@ class ServiceDetailsController extends Controller
             'section_image' => $newPhoto,
             'section_subtitle' => $request->section_subtitle,
             'section_text' => $request->section_text,
-            
+
             'featured' => $request->featured,
             'display_order' => $request->display_order,
 
@@ -69,7 +69,8 @@ class ServiceDetailsController extends Controller
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
-        return  redirect()->route('service-details-index',$service_id)->with(['message'=>'service detail has been added!']);
+
+        return  redirect()->route('service-details-index', $service_id)->with(['message' => 'service detail has been added!']);
     }
 
     /**
@@ -89,13 +90,14 @@ class ServiceDetailsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($service_id,$id)
+    public function edit($service_id, $id)
     {
-           $service = DB::table('svdetails')
-            ->where('id', '=', $id)
-            ->get();
-            $service = $service[0];
-        return view('admin.service-details.edit', compact('service','service_id'));
+        $service = DB::table('svdetails')
+         ->where('id', '=', $id)
+         ->get();
+        $service = $service[0];
+
+        return view('admin.service-details.edit', compact('service', 'service_id'));
     }
 
     /**
@@ -105,19 +107,17 @@ class ServiceDetailsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$service_id,$id)
+    public function update(Request $request, $service_id, $id)
     {
-         if ($request->has('section_image'))
-        {
+        if ($request->has('section_image')) {
             $photo = $request->file('section_image');
             $newPhoto = time().$photo->getClientOriginalName();
-            $photo->move('section_images/services/',$newPhoto);
+            $photo->move('section_images/services/', $newPhoto);
 
-              DB::table('svdetails')->where('id', $id)->update([
-            'section_image' => $newPhoto,
-              ]);
+            DB::table('svdetails')->where('id', $id)->update([
+                'section_image' => $newPhoto,
+            ]);
         }
-          
 
         $service = DB::table('svdetails')->where('id', $id)->update([
             'service_id' => $request->service_id,
@@ -126,12 +126,13 @@ class ServiceDetailsController extends Controller
             'section_color' => $request->section_color,
             'section_subtitle' => $request->section_subtitle,
             'section_text' => $request->section_text,
-            
+
             'featured' => $request->featured,
             'display_order' => $request->display_order,
             'updated_by' => Auth::id(),
-            'updated_at' => Carbon::now()
+            'updated_at' => Carbon::now(),
         ]);
+
         return redirect()
             ->route('service-details-index', $service_id)
             ->with('message', 'service section has been added!');
@@ -142,18 +143,18 @@ class ServiceDetailsController extends Controller
         // );
     }
 
-    /** 
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($service_id,$id)
+    public function destroy($service_id, $id)
     {
         $service = DB::table('svdetails')
          ->where('id', $id)
             ->delete();
-            
+
         return response()->json(['message' => 'Service Details deleted successfully']);
     }
 }

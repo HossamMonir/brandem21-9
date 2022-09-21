@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+
 use Auth;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BlogController extends Controller
 {
@@ -19,6 +19,7 @@ class BlogController extends Controller
         $blog = DB::table('blog')
             ->orderBy('display_order')
             ->get();
+
         return view('admin.blog.index', compact('blog'));
     }
 
@@ -39,7 +40,7 @@ class BlogController extends Controller
             'meta_keywords' => ['required'],
         ]);
         $photo = $request->file('image');
-        $newPhoto = time() . $photo->getClientOriginalName();
+        $newPhoto = time().$photo->getClientOriginalName();
         $photo->move('images/blog/', $newPhoto);
 
         $blog = DB::table('blog')->insert([
@@ -55,6 +56,7 @@ class BlogController extends Controller
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
+
         return redirect()
             ->route('blog-index')
             ->with('message', 'Blog section has been added!');
@@ -68,6 +70,7 @@ class BlogController extends Controller
             ->where('id', $id)
             ->get();
         $blog = $blog[0];
+
         return view('admin.blog.edit', compact('blog'));
     }
 
@@ -77,6 +80,7 @@ class BlogController extends Controller
             ->where('id', $id)
             ->get();
         $blog = $blog[0];
+
         return view('admin.blog.edit', compact('blog'));
     }
 
@@ -84,7 +88,7 @@ class BlogController extends Controller
     {
         if ($request->has('image')) {
             $photo = $request->file('image');
-            $newPhoto = time() . $photo->getClientOriginalName();
+            $newPhoto = time().$photo->getClientOriginalName();
             $photo->move('images/blog/', $newPhoto);
         } else {
             $newPhoto = $request->image;
@@ -112,6 +116,7 @@ class BlogController extends Controller
         $blog = DB::table('blog')
             ->where('id', $id)
             ->delete();
+
         return response()->json(['message' => 'Blog deleted successfully']);
     }
 

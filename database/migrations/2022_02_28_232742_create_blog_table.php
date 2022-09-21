@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateBlogTable extends Migration
 {
@@ -28,7 +28,7 @@ class CreateBlogTable extends Migration
             $table->text('meta_keywords')->nullable();
             $table->string('og_image')->nullable()->nullable();
             $table->string('link_url')->nullable();
-            
+
             $table->boolean('featured')->nullable();
             $table->integer('display_order')->nullable();
             $table->boolean('is_hidden')->default('0');

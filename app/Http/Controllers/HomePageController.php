@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+
 use Auth;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomePageController extends Controller
 {
@@ -16,9 +16,10 @@ class HomePageController extends Controller
      */
     public function index()
     {
-       $homes = DB::table('homepage')
-            ->orderBy('display_order')->get();
-     return view('admin.home.index',compact('homes'));
+        $homes = DB::table('homepage')
+             ->orderBy('display_order')->get();
+
+        return view('admin.home.index', compact('homes'));
     }
 
     /**
@@ -29,7 +30,6 @@ class HomePageController extends Controller
     public function create()
     {
         return view('admin.home.create');
-        
     }
 
     /**
@@ -40,12 +40,12 @@ class HomePageController extends Controller
      */
     public function store(Request $request)
     {
-           $photo = $request->file('section_image');
-        $newPhoto = time() . $photo->getClientOriginalName();
+        $photo = $request->file('section_image');
+        $newPhoto = time().$photo->getClientOriginalName();
         $photo->move('images/homepage', $newPhoto);
 
         $homes = DB::table('homepage')->insert([
-             'section_title' => $request->section_title,
+            'section_title' => $request->section_title,
             'section_title2' => $request->section_title2,
             'section_color' => $request->section_color,
             'section_image' => $newPhoto,
@@ -56,23 +56,25 @@ class HomePageController extends Controller
             'created_by' => Auth::id(),
             'updated_by' => Auth::id(),
             'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now()
-             
-                
+            'updated_at' => Carbon::now(),
+
         ]);
+
         return redirect()
             ->route('homepage-index')
             ->with('message', 'Home section has been added!');
-        
     }
-    public function updateOrder(Request $request){
-        foreach($request->order as $key => $order){
-               $homeorder = DB::table('homepage')->where('id', ($order['id']))
-               ->update(['order' => $order['order']]);
+
+    public function updateOrder(Request $request)
+    {
+        foreach ($request->order as $key => $order) {
+            $homeorder = DB::table('homepage')->where('id', ($order['id']))
+            ->update(['order' => $order['order']]);
         }
 
         return response('Update Successfully.', 200);
-        }
+    }
+
     /**
      * Display the specified resource.
      *
@@ -107,9 +109,9 @@ class HomePageController extends Controller
      */
     public function update(Request $request, $id)
     {
-          if ($request->has('section_image')) {
+        if ($request->has('section_image')) {
             $photo = $request->file('section_image');
-            $newPhoto = time() . $photo->getClientOriginalName();
+            $newPhoto = time().$photo->getClientOriginalName();
             $photo->move('images/homepage', $newPhoto);
             DB::table('homepage')
                 ->where('id', $id)
@@ -117,22 +119,22 @@ class HomePageController extends Controller
                     'section_image' => $newPhoto,
                 ]);
         }
-            $about = DB::table('homepage')
-                ->where('id', $id)
-                ->update([
-              'section_title' => $request->section_title,
-            'section_title2' => $request->section_title2,
-            'section_color' => $request->section_color,
-            // 'section_image' => $newPhoto,
-            'section_subtitle' => $request->section_subtitle,
-            'section_text' => $request->section_text,
-            'featured' => $request->featured,
+        $about = DB::table('homepage')
+            ->where('id', $id)
+            ->update([
+                'section_title' => $request->section_title,
+                'section_title2' => $request->section_title2,
+                'section_color' => $request->section_color,
+                // 'section_image' => $newPhoto,
+                'section_subtitle' => $request->section_subtitle,
+                'section_text' => $request->section_text,
+                'featured' => $request->featured,
 
-            'display_order' => $request->display_order,
-            'updated_by' => Auth::id(),
-            'updated_at' => Carbon::now()
-                ]);
-        
+                'display_order' => $request->display_order,
+                'updated_by' => Auth::id(),
+                'updated_at' => Carbon::now(),
+            ]);
+
         return redirect()
             ->route('homepage-index')
             ->with('message', 'HomePage section has been updated!');
@@ -149,15 +151,18 @@ class HomePageController extends Controller
         $home = DB::table('homepage')
             ->where('id', $id)
             ->delete();
+
         return response()->json([
             'message' => 'Home section deleted successfully',
         ]);
     }
-      public function Order(Request $request){
-        foreach ($request->order as $key => $order) {
-            $home = DB::table('homepage')->find($order['id'])->update(['order' => $order['order']]);
-        }
 
-        return response('Update Successfully.', 200);
-    }
+      public function Order(Request $request)
+      {
+          foreach ($request->order as $key => $order) {
+              $home = DB::table('homepage')->find($order['id'])->update(['order' => $order['order']]);
+          }
+
+          return response('Update Successfully.', 200);
+      }
 }
