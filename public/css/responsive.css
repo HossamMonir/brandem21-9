@@ -1,0 +1,730 @@
+@media screen and (max-width: 1166px) {
+    .container {
+        max-width: 1024px;
+    }
+
+    /* Home */
+    section.who-we-are p {
+        padding: 0px 200px;
+    }
+
+    /* About Us */
+    .about-main .about-partone h1 span {
+        font-size: 54px;
+        line-height: 54px;
+    }
+    .about-main .about-partone h1 .sub-title {
+        font-size: 44px;
+    }
+    .this-is-us h1 span {
+        font-size: 54px;
+        line-height: 54px;
+    }
+    .this-is-us h1 .sub-title {
+        font-size: 44px;
+    }
+    .our-way h1 {
+        font-size: 54px;
+    }
+    .our-way h1 span {
+        font-size: 44px;
+    }
+
+    /* Contact Us */
+    .get-touch-main h1 {
+        font-size: 56px;
+    }
+    .get-touch-main h1 span {
+        font-size: 46px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        max-width: 980px;
+    }
+
+    header .icon_open {
+        margin-left: -26px;
+    }
+
+    #back-top {
+        bottom: 140px;
+    }
+
+    /* About Us */
+    .our-way .engage-service ul li .about-popup .about-popcontent ul li {
+        padding: 0px 0px 0px 20px;
+    }
+
+    /* Get In Touch */
+    .get-touch-main h1 {
+        font-size: 54px;
+    }
+    .get-touch-main h1 span {
+        font-size: 44px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .container {
+        max-width: 730px;
+    }
+
+    /* Home */
+    section.who-we-are p {
+        padding: 0px;
+    }
+    section .latest-work-main ul li .work-thumb .caption-text h1 {
+        font-size: 24px;
+    }
+    section .latest-work-main ul li .work-thumb .caption-text p {
+        font-size: 15px;
+    }
+    section .hellow-banner .position {
+        bottom: 60px;
+    }
+
+    /* About Us */
+    .about-main .about-partone h1 span {
+        font-size: 48px;
+        line-height: 52px;
+    }
+    .about-main .about-partone h1 .sub-title {
+        font-size: 38px;
+    }
+    .about-main .our-way-content {
+        max-width: 100%;
+        float: left;
+        margin: 0px;
+    }
+    .this-is-us h1 span {
+        font-size: 48px;
+        line-height: 52px;
+    }
+    .this-is-us h1 .sub-title {
+        font-size: 38px;
+    }
+    .this-is-us .our-secret {
+        margin-top: 100px;
+    }
+    .this-is-us .our-secret .secret-slider {
+        padding: 20px 30px 20px 0px;
+    }
+    .this-is-us .our-secret .secret-slider h2 {
+        font-size: 38px;
+        line-height: 36px;
+        padding-bottom: 10px;
+    }
+    .this-is-us .our-secret .secret-slider h2 span {
+        font-size: 26px;
+    }
+    .this-is-us .our-secret .secret-slider p {
+        font-size: 22px;
+    }
+    .our-way h1 {
+        font-size: 48px;
+        line-height: 52px;
+    }
+    .our-way h1 span {
+        font-size: 38px;
+    }
+    .our-way .engage-service ul li p {
+        height: 110px;
+    }
+    .our-way .engage-service ul li .about-popup {
+        margin-top: -110px;
+    }
+    .our-way .engage-service ul li .about-popup .about-popcontent p {
+        font-size: 14px;
+    }
+    .our-way .our-way-content {
+        max-width: 100%;
+        float: left;
+        margin: 0px;
+    }
+
+    .slick-dots {
+        right: 0px;
+    }
+
+    /* Our Services */
+    .service-list {
+        margin: 12px 0px 30px 0px;
+    }
+    .service-list ul li a {
+        margin: 0px;
+    }
+    .service-list .services-popup {
+        width: 100%;
+        padding: 20px;
+        margin: 0px;
+    }
+    .service-list .services-popup .close-icon {
+        width: 20px;
+        height: 20px;
+        top: 20px;
+    }
+    .service-list .services-popup .close-icon img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    /* Our Work */
+    .our-work ul li .work-thumb .caption-text h1 {
+        font-size: 24px;
+    }
+    .our-work ul li .work-thumb .caption-text p {
+        font-size: 15px;
+    }
+
+    /* Our Work Detail */
+    .our-work-left {
+        width: 66%;
+    }
+    .our-work-right {
+        width: 30%;
+    }
+    .blog-bottom ul li:nth-child(1) {
+        width: 25%;
+    }
+    .blog-bottom ul li:nth-child(2) {
+        width: 22%;
+    }
+    .blog-bottom ul li:nth-child(3) {
+        width: 33%;
+    }
+    .blog-bottom ul li:nth-child(4) {
+        width: 20%;
+    }
+    .blog-bottom ul li .prev-blog {
+        padding-left: 18px;
+    }
+    .blog-bottom ul li .next-blog {
+        padding-right: 18px;
+    }
+
+    /* Get In Touch */
+    .get-touch-main h1 {
+        font-size: 50px;
+    }
+    .get-touch-main h1 span {
+        font-size: 40px;
+        line-height: 46px;
+    }
+    .get-touch-main .get-form {
+        margin-top: 50px;
+    }
+    .get-touch-main .get-form ul li .interested {
+        margin-top: 20px;
+    }
+
+    /* Blog */
+    .blog-main .porfolio-detail .por-sub-title {
+        font-size: 15px;
+    }
+
+    /* Blog Detail */
+    .blog-detail-main .col-sm-1 {
+        width: 68%;
+    }
+    .blog-detail-main .blogd-title2 {
+        font-size: 26px;
+    }
+    .blog-bottom ul li .share-post > div {
+        margin: 0px 2px;
+    }
+    .blog-detail-main .col-sm-2 {
+        width: 29%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        max-width: 640px;
+    }
+
+    /* Home */
+    header .menu-rightside {
+        width: 330px;
+        height: 100vh;
+        padding: 70px 0px 70px 30px;
+    }
+    header .menu ul li a {
+        font-size: 24px;
+    }
+    header .social-icon {
+        margin-bottom: 50px;
+    }
+
+    section .we-help-service ul li {
+        width: 48%;
+        float: none;
+        display: inline-block;
+        vertical-align: top;
+        margin: 0px 0px 40px 0px;
+    }
+    section .latest-work-main {
+        padding: 0px 10px;
+    }
+    section .latest-work-main ul li {
+        width: 100%;
+    }
+    section .latest-work-main ul li .work-thumb .caption-text h1 {
+        font-size: 46px;
+    }
+    section .latest-work-main ul li .work-thumb .caption-text p {
+        font-size: 34px;
+    }
+
+    footer .footer-menu {
+        display: none;
+    }
+    footer .footer-social-icon.display1 {
+        display: block;
+        margin: 80px 0px 0px 0px;
+    }
+    footer .footer-social-icon.display2 {
+        display: none;
+    }
+
+    /* About Us */
+    .about-main .about-partone h1 span {
+        font-size: 35px;
+        line-height: 34px;
+    }
+    .about-main .about-partone h1 .sub-title {
+        font-size: 28px;
+    }
+    .this-is-us h1 span {
+        font-size: 35px;
+        line-height: 34px;
+    }
+    .this-is-us h1 .sub-title {
+        font-size: 28px;
+    }
+    .this-is-us .our-secret {
+        margin-top: 100px;
+    }
+    .this-is-us .our-secret .secret-slider h2 {
+        font-size: 32px;
+        line-height: 30px;
+    }
+    .this-is-us .our-secret .secret-slider h2 span {
+        font-size: 22px;
+    }
+    .this-is-us .our-secret .secret-slider p {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .our-way h1 {
+        font-size: 48px;
+        line-height: 52px;
+    }
+    .our-way h1 span {
+        font-size: 38px;
+    }
+    .our-way .engage-service ul {
+        display: table-cell;
+        text-align: center;
+        vertical-align: top;
+    }
+    .our-way .engage-service ul li {
+        width: 100%;
+        max-width: 320px;
+        float: none;
+        display: inline-block;
+        vertical-align: top;
+        margin: 0px 0px 40px 0px;
+    }
+    .our-way .engage-service ul li:last-child {
+        margin-bottom: 0px;
+    }
+    .our-way .engage-service ul li p {
+        height: 70px;
+    }
+    .our-way .engage-service ul li .about-popup {
+        margin-top: -70px;
+    }
+
+    /* Our Work */
+    .our-work {
+        padding: 0px 10px;
+    }
+    .our-work ul li {
+        width: 100%;
+        margin: 0px;
+    }
+
+    /* Our Work Detail */
+    .our-work-left {
+        width: 100%;
+    }
+    .our-work-right {
+        width: 100%;
+        margin-bottom: 0px;
+    }
+    .blog-bottom ul li:nth-child(1) {
+        width: 12%;
+    }
+    .blog-bottom ul li:nth-child(2) {
+        width: 30%;
+    }
+    .blog-bottom ul li:nth-child(3) {
+        width: 46%;
+    }
+    .blog-bottom ul li:nth-child(4) {
+        width: 12%;
+    }
+    .blog-bottom ul li .prev-blog a {
+        font-size: 0px;
+    }
+    .blog-bottom ul li .prev-blog span {
+        font-size: 0px;
+    }
+    .blog-bottom ul li .next-blog a {
+        font-size: 0px;
+    }
+    .blog-bottom ul li .next-blog span {
+        font-size: 0px;
+    }
+
+    /* Get In Touch */
+    .get-touch-center {
+        max-width: 100%;
+        float: left;
+        margin: 0px;
+        padding: 0px;
+    }
+    .get-touch-main {
+        margin-top: 30px;
+    }
+    .get-touch-main h1 {
+        font-size: 35px;
+    }
+    .get-touch-main h1 span {
+        font-size: 28px;
+        line-height: 27px;
+    }
+    .get-touch-main .get-form ul li {
+        margin-bottom: 0px;
+    }
+    .get-touch-main .get-form ul li input[type="submit"] {
+        margin-top: 32px;
+    }
+    .get-touch-main .get-form ul li .col-sm-1 {
+        width: 100%;
+    }
+    .get-touch-main .get-form ul li .interested-list.pad-left0 {
+        padding-left: 30px;
+        padding-top: 0px;
+    }
+    .get-touch-main .map-part .map img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Blog */
+    .blog-main .porfolio-detail .por-sub-title {
+        font-size: 18px;
+    }
+
+    /* Blog Detail */
+    .blog-detail-main .col-sm-1 {
+        width: 100%;
+        margin-top: 40px;
+    }
+    .blog-detail-main .blogd-title2 {
+        font-size: 26px;
+    }
+    .blog-bottom ul li .share-post > div {
+        margin: 0px 2px;
+    }
+    .blog-detail-main .col-sm-2 {
+        width: 40%;
+        float: left;
+        margin-top: 30px;
+    }
+    .blog-detail-main .blog-detcontent {
+        padding-bottom: 0px;
+    }
+    .blog-bottom.display {
+        display: block;
+        padding: 0px 20px;
+        margin: 20px 0px 30px 0px;
+    }
+    .blog-bottom.display-bot {
+        display: none;
+    }
+    .blog-bottom ul li .share-post > div {
+        margin: 0px 5px;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .container {
+        max-width: 100%;
+        padding: 0px 20px;
+    }
+
+    /* Home */
+    section .latest-work-main ul li .work-thumb .caption-text h1 {
+        font-size: 40px;
+    }
+    section .latest-work-main ul li .work-thumb .caption-text p {
+        font-size: 30px;
+    }
+
+    section .hellow-banner .position {
+        bottom: 40px;
+    }
+
+    /* About Us */
+    .this-is-us .our-secret .caption p {
+        font-size: 16px;
+    }
+    .our-way h1 {
+        font-size: 38px;
+        line-height: 40px;
+        margin-bottom: 20px;
+    }
+    .our-way h1 span {
+        font-size: 30px;
+    }
+
+    /* Our Services */
+    .service-list ul li a {
+        font-size: 20px;
+        margin: 0px;
+    }
+    .service-list .services-popup .popup-content .service-tag {
+        font-size: 20px;
+    }
+
+    /* Our Work Detail */
+    .blog-bottom ul li:nth-child(1) {
+        width: 10%;
+    }
+    .blog-bottom ul li:nth-child(2) {
+        width: 30%;
+    }
+    .blog-bottom ul li:nth-child(3) {
+        width: 50%;
+    }
+    .blog-bottom ul li:nth-child(4) {
+        width: 10%;
+    }
+
+    /* Get In Touch */
+    .get-touch-main .get-form ul li input[type="text"] {
+        height: 60px;
+    }
+    .get-touch-main .get-form ul li .interested-list a {
+        font-size: 20px;
+        line-height: 26px;
+    }
+    .get-touch-main .map-part {
+        margin-top: 10px;
+    }
+
+    /* Blog Detail */
+    .blog-detail-main .col-sm-2 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    /*.container{ max-width:300px;}*/
+
+    /* Home */
+    section h1 {
+        font-size: 24px;
+    }
+    section h1 span {
+        font-size: 16px;
+    }
+    section.who-we-are p {
+        font-size: 14px;
+        line-height: 18px;
+    }
+    section .we-help-service ul li .service-icon {
+        height: 70px;
+    }
+    section .we-help-service ul li .service-icon img {
+        max-width: 70px;
+    }
+    section .latest-work-main ul li .work-thumb .caption-text h1 {
+        font-size: 30px;
+    }
+    section .latest-work-main ul li .work-thumb .caption-text p {
+        font-size: 18px;
+    }
+    section .hellow-banner .position {
+        bottom: 12px;
+    }
+
+    footer .site-address {
+        width: 100%;
+        padding: 0px;
+    }
+    footer .copyright {
+        width: 100%;
+        padding: 0px;
+    }
+    footer .footer-social-icon > div {
+        margin: 0px 18px 0px 0px;
+    }
+    footer .footer-social-icon.display1 {
+        float: left;
+        margin: 0px 0px 20px 0px;
+    }
+
+    /* About Us */
+    .about-main .about-partone h1 span {
+        font-size: 22px;
+        line-height: 28px;
+    }
+    .about-main .about-partone h1 .sub-title {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .this-is-us {
+        padding-bottom: 50px;
+    }
+    .this-is-us h1 span {
+        font-size: 22px;
+        line-height: 28px;
+    }
+    .this-is-us h1 .sub-title {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .this-is-us .our-secret {
+        margin-top: 50px;
+    }
+    .this-is-us .our-secret .secret-slider {
+        padding: 0px 30px 40px 0px;
+    }
+    .this-is-us .our-secret .secret-slider h2 {
+        font-size: 22px;
+        line-height: 24px;
+    }
+    .this-is-us .our-secret .secret-slider h2 span {
+        font-size: 18px;
+    }
+    .this-is-us .our-secret .secret-slider p {
+        font-size: 16px;
+    }
+    .our-way h1 {
+        font-size: 20px;
+        line-height: 22px;
+    }
+    .our-way h1 span {
+        font-size: 16px;
+    }
+
+    /* Our Services */
+    .service-list ul li a {
+        font-size: 16px;
+    }
+    .service-list .services-popup .popup-content p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .service-list .services-popup .popup-content h6 {
+        font-size: 15px;
+    }
+    .service-list .services-popup .popup-content .offter-list ul li {
+        font-size: 14px;
+    }
+    .service-list .services-popup .popup-content .turn-need ul li {
+        font-size: 14px;
+    }
+
+    /* Our Work Detail */
+    .blog-bottom ul li:nth-child(1) {
+        width: 8%;
+    }
+    .blog-bottom ul li:nth-child(2) {
+        width: 48%;
+    }
+    .blog-bottom ul li .back-gallery a {
+        font-size: 11px;
+    }
+    .blog-bottom ul li:nth-child(3) {
+        width: 36%;
+    }
+    .blog-bottom ul li .share-post label {
+        display: none;
+    }
+    .blog-bottom ul li .share-post > div {
+        margin: 0px 3px;
+    }
+    .blog-bottom ul li:nth-child(4) {
+        width: 8%;
+    }
+
+    /* Get In Touch */
+    .get-touch-main h1 {
+        font-size: 23px;
+        line-height: 26px;
+    }
+    .get-touch-main h1 span {
+        font-size: 22px;
+    }
+    .get-touch-main .get-form ul li .interested-list {
+        padding-left: 14px;
+    }
+    .get-touch-main .get-form ul li .interested-list.pad-left0 {
+        padding-left: 14px;
+    }
+    .get-touch-main .get-form ul li .interested-list a {
+        font-size: 18px;
+    }
+
+    /* Blog */
+    .blog-main .porfolio-detail {
+        padding: 20px 10px;
+    }
+    .blog-main .porfolio-detail .por-sub-title {
+        font-size: 14px;
+    }
+
+    /* Blog Detail */
+    .blog-detail-main .blog-top {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .blog-detail-main .blogd-title2 {
+        font-size: 22px;
+        line-height: 26px;
+    }
+    .blog-detail-main .blog-detpic {
+        margin: 0px;
+    }
+    .blog-detail-main .blog-detcontent {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .blog-bottom.display {
+        padding: 0px 10px;
+    }
+}
+
+@media screen and (max-width: 374px) {
+    /* Home */
+    header .menu-rightside {
+        width: 300px;
+    }
+    section h1 {
+        font-size: 22px;
+    }
+    section .latest-work-main ul li .work-thumb .caption-text h1 {
+        font-size: 24px;
+    }
+    section .latest-work-main ul li .work-thumb .caption-text p {
+        font-size: 16px;
+    }
+}
